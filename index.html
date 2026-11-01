@@ -356,7 +356,7 @@ header {
 .hero h1 {
     margin-top: 25px;
 
-    font-size: clamp(32px, 6vw, ,65px);
+    font-size: clamp(32px, 6vw, 65px);
 
     line-height: 0.95;
 
@@ -1552,11 +1552,11 @@ footer p {
     .navbar {
         min-height: 65px;
     }
-   
+
    .search-panel {
     scroll-margin-top: 90px;
    }
-   
+
    #subject-panel {
     scroll-margin-top: 100px;
    }
@@ -1632,22 +1632,59 @@ footer p {
 }
 
 
+/* =========================================================
+   EXPLORE EXAMS (FOOTER DIRECTORY)
+   ========================================================= */
 
+.explore-exams {
+    max-width: 1250px;
+    margin: 60px auto 0;
+    padding: 35px 20px 10px;
+    border-top: 1px solid var(--border);
+}
 
+.explore-title {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    margin-bottom: 28px;
+}
 
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
 
+.explore-col h4 {
+    font-size: 13px;
+    color: white;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
 
+.explore-col a {
+    display: block;
+    width: fit-content;
+    margin-bottom: 11px;
+    font-size: 12px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: 0.2s;
+}
 
+.explore-col a:hover {
+    color: var(--cyan);
+    transform: translateX(3px);
+}
 
+@media (max-width: 700px) {
+    .explore-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 26px 18px;
+    }
+}
 
-
-
-
-
-
-
-  
-  
 
 </style>
 </head>
@@ -1664,7 +1701,7 @@ footer p {
         <div class="welcome-line"></div>
     </div>
 </div>
-        
+
 
 <!-- =======================================================
      HEADER
@@ -2494,6 +2531,67 @@ footer p {
 
 
 <!-- =======================================================
+     EXPLORE EXAMS
+     ======================================================= -->
+
+<section class="explore-exams">
+
+    <div class="explore-title">EXPLORE EXAMS</div>
+
+    <div class="explore-grid">
+
+        <div class="explore-col">
+            <h4>Joint Entrance Examination</h4>
+            <a onclick="openGlobal('JEE Main')">JEE Main</a>
+            <a onclick="openGlobal('JEE Advanced')">JEE Advanced</a>
+            <a onclick="openCompetitiveExam('MHT-CET')">MHT-CET</a>
+            <a onclick="openCompetitiveExam('BITSAT')">BITSAT</a>
+            <a onclick="openCompetitiveExam('COMEDK')">COMEDK</a>
+            <a onclick="openCompetitiveExam('WBJEE')">WBJEE</a>
+            <a onclick="openCompetitiveExam('VITEEE')">VITEEE</a>
+            <a onclick="openCompetitiveExam('AP EAPCET')">AP EAPCET</a>
+            <a onclick="openCompetitiveExam('TS EAPCET')">TS EAPCET</a>
+            <a onclick="openCompetitiveExam('IISER IAT')">IAT (IISER)</a>
+        </div>
+
+        <div class="explore-col">
+            <h4>Medical</h4>
+            <a onclick="openCompetitiveExam('NEET')">NEET</a>
+
+            <h4 style="margin-top:26px;">Science & University</h4>
+            <a onclick="openCompetitiveExam('NEST')">NEST</a>
+            <a onclick="openCompetitiveExam('CUET')">CUET</a>
+            <a onclick="openCompetitiveExam('OTHER')">Other Exams</a>
+        </div>
+
+        <div class="explore-col">
+            <h4>Subjects</h4>
+            <a onclick="openSubject('Physics')">Physics</a>
+            <a onclick="openSubject('Chemistry')">Chemistry</a>
+            <a onclick="openSubject('Mathematics')">Mathematics</a>
+
+            <h4 style="margin-top:26px;">Classes</h4>
+            <a onclick="openSubject('Physics')">Class 11</a>
+            <a onclick="openSubject('Physics')">Class 12</a>
+        </div>
+
+        <div class="explore-col">
+            <h4>Resource Vault</h4>
+            <a onclick="openGlobal('Books')">Books</a>
+            <a onclick="openGlobal('Notes')">Notes</a>
+            <a onclick="openGlobal('DPPs')">DPPs</a>
+            <a onclick="openGlobal('PYQ Collections')">PYQ Collections</a>
+            <a onclick="openGlobal('Mock Tests')">Mock Tests</a>
+            <a onclick="openGlobal('Formula Mega Pack')">Formula Mega Pack</a>
+            <a onclick="openGlobal('Revision Material')">Revision</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
      FOOTER
      ======================================================= -->
 
@@ -3287,7 +3385,7 @@ function createResourceCard(item, type) {
 function openCompetitiveExam(exam) {
     openGlobal(exam);
 }
-   
+
 
 /* =========================================================
    SEARCH
